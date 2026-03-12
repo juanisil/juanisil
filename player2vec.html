@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player2Vec - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ]
+        });">
+    </script>
+</head>
+<body>
+
+    
+    <div class="nav-container">
+        <a href="./index.html#projects" class="btn" data-en="← Back to Projects" data-es="← Volver a Proyectos">← Back to Projects</a>
+    </div>
+    
+    <div class="site-controls">
+        <button id="lang-toggle" class="control-btn">EN / ES</button>
+        <button id="theme-toggle" class="control-btn">🌙</button>
+    </div>
+
+    <main class="container">
+        <section id="project-detail">
+            <h1 class="section-title">
+                <span data-en="Player2Vec" data-es="Player2Vec">Player2Vec</span><span class="dot">.</span>
+            </h1>
+            
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="overview" data-en="Overview & Impact" data-es="Resumen e Impacto">Overview & Impact</button>
+                <button class="tab-btn" data-tab="technical" data-en="Technical Deep Dive" data-es="Detalles Técnicos">Technical Deep Dive</button>
+            </div>
+
+            <div id="overview" class="tab-content active">
+                <div class="award-badge">
+                    <span class="star">★</span>
+                    <a href="https://54jaiio.sadio.org.ar/trabajos_premiados/" target='_blank' rel='noopener noreferrer'>
+                        <span data-en="Best Student Work at JAIIO 54th edition" data-es="Premio mejor trabajo en JAIIO 54">Best Student Work at JAIIO 54th edition</span>
+                    </a>
+                </div>
+                
+                <div class="text-block">
+                    <h3 data-en="The problem" data-es="El problema">The problem</h3>
+                    <p data-en="Over the last decade, <strong>soccer analysis</strong> has evolved toward an increasingly <strong>mathematical and sophisticated</strong> perspective, incorporating tools like Expected Goals (xG) to evaluate the quality of scoring chances. However, these metrics focus on the final shot without capturing how <strong>maintaining possession influences shooting opportunities.</strong>" 
+                    data-es="En la última década el <strong>análisis del fútbol</strong> ha evolucionado hacia una perspectiva cada vez más
+                    <strong>matemática y sofisticada</strong>, incorporando herramientas como Expected Goals (xG) para evaluar la
+                    calidad de las oportunidades de gol. Sin embargo, estas métricas se centran en la finalización
+                    de la jugada sin capturar cómo el <strong>mantenimiento de la posesión influye en las oportunidades
+                    de tiro.</strong>"></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Solution: PSL" data-es="Solución: PSL">Solution: PSL</h3>
+                    <p data-en="Introduction of the <strong>Probability of Shot before Loss (PSL)</strong>, which measures the likelihood of a team reaching a shooting state during a possession. This allows for <strong>valuing playmakers who maintain possession under pressure.</strong>" 
+                    data-es="Introducción de la <strong>Probabilidad de Disparo antes de la Pérdida (PSL)</strong>, que mide la probabilidad de que un equipo alcance un estado de tiro durante una posesión, lo que permite <strong>valorar a los creadores de juego que mantienen la posesión bajo presión.</strong>."></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Key results" data-es="Resultados clave">Key Results</h3>
+                    <ul class="exp-list">
+                        <li data-en="Analyzed over 600 players from the 2012/13 English Premier League season." 
+                        data-es="Se analizaron más 600 jugadores de la temporada 2012/13 de la English Premier League."></li>
+                        <li data-en="Framework based on Monte Carlo simulations, enabling the <strong>analysis of different team lineups</strong> to predict results—highly <strong>useful for scouting and strategic coaching planning.</strong>" 
+                        data-es="Framework basado en simulaciones de Monte Carlo, que permite <strong>analizar lineups</strong> de equipos distintos para predecir resultados, de mucha <strong>utilidad para scouting y planificación estratégica de coaches</strong>."></li>
+                        <li data-en="Successful identification of high-impact players whose value is often hidden by traditional statistics." 
+                        data-es="Identificación exitosa de jugadores de alto impacto cuyo valor suele estar oculto en las estadísticas tradicionales."></li>
+                    </ul>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Technologies" data-es="Tecnologías">Technologies</h3>
+                    <div class="skill-tags">
+                        <span>Python</span><span>Representation Learning</span><span>PyTorch</span><span>Graph Neural Networks</span><span>Transformers</span><span>Monte Carlo Simulations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="technical" class="tab-content">
+                <!-- ════════════════════════════════════════════════════
+                    OVERVIEW SECTION
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="The Problem: Measuring a Player's True Impact"
+                        data-es="El Problema: Medir el Impacto Real de un Jugador">
+                        The Problem: Measuring a Player's True Impact
+                    </h3>
+                    <p data-en="How do you compare two players objectively? Traditional stats like goals or assists capture outcomes but miss the process. We propose a framework centered on <strong>PSL (Probability of Shooting before Losing the ball)</strong> — a metric that quantifies how much a player contributes to a team's ability to generate shots, rather than just taking them."
+                    data-es="¿Cómo se comparan dos jugadores de forma objetiva? Las estadísticas tradicionales como goles o asistencias capturan resultados pero pierden el proceso. Proponemos un framework centrado en el <strong>PSL (Probabilidad de Disparar antes de Perder el Balón)</strong> — una métrica que cuantifica cuánto contribuye un jugador a la capacidad de su equipo de generar disparos, más allá de solo ejecutarlos.">
+                    </p>
+                    <p data-en="PSL sits at the heart of Expected Goals decomposition:"
+                    data-es="El PSL se ubica en el corazón de la descomposición del Expected Goals:">
+                    </p>
+                    <div class="formula">
+                        $$xG(A) = P(A) \cdot PSL(A) \cdot SA(A)$$
+                    </div>
+                    <p data-en="Where <em>P(A)</em> is possessions, <em>PSL(A)</em> is the probability of shooting before losing the ball, and <em>SA(A)</em> is shot-to-goal conversion. While xG and conversion rates are well-studied, PSL has been largely overlooked — until now."
+                    data-es="Donde <em>P(A)</em> son las posesiones, <em>PSL(A)</em> es la probabilidad de disparar antes de perder el balón, y <em>SA(A)</em> es la conversión de disparos en goles. Mientras que el xG y las tasas de conversión están bien estudiadas, el PSL ha sido ignorado en gran medida — hasta ahora.">
+                    </p>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    MARKOV CHAIN MODEL
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="1. The Player Network: A 14-State Markov Chain"
+                        data-es="1. La Red de Jugadores: Una Cadena de Markov de 14 Estados">
+                        1. The Player Network: A 14-State Markov Chain
+                    </h3>
+                    <p data-en="We model each team's ball flow as a <strong>Continuous Time Markov Chain (CTMC)</strong> with 14 states: 11 players, Ball Gain, Ball Loss, and Shot on Goal. Each edge in the network is a transition <em>rate</em> — events per unit of shared playing time."
+                    data-es="Modelamos el flujo de balón de cada equipo como una <strong>Cadena de Markov de Tiempo Continuo (CTMC)</strong> con 14 estados: 11 jugadores, Ganancia del Balón, Pérdida del Balón y Disparo al Arco. Cada arista en la red es una <em>tasa</em> de transición — eventos por unidad de tiempo jugado en conjunto.">
+                    </p>
+
+                    <figure class="paper-figure">
+                        <img src="img/CTMC.png" 
+                            alt="Player Network Graph" 
+                            class="paper-img">
+                        <figcaption data-en="Figure 1: Player Network Model — 14-state CTMC"
+                                    data-es="Figura 1: Modelo de Red de Jugadores — CTMC de 14 estados">
+                        </figcaption>
+                    </figure>
+                    
+                    <p data-en="The transition rate matrix R encodes four types of events per player:"
+                    data-es="La matriz de tasas de transición R codifica cuatro tipos de eventos por jugador:">
+                    </p>
+                    <div class="formula">
+                        $$r(G, J_i) = \frac{\text{Ball Gains by } J_i}{\text{Time Played}} \qquad
+                        r(J_i, S) = \frac{\text{Shots by } J_i}{\text{Time Played}}$$
+                        $$r(J_i, J_j) = \frac{\text{Passes from } J_i \text{ to } J_j}{\text{Shared Time}} \qquad
+                        r(J_i, L) = \frac{\text{Losses by } J_i}{\text{Time Played}}$$
+                    </div>
+                    <p data-en="Normalizing R row-wise gives the stochastic matrix Q, from which PSL is derived as an absorption probability into the Shot state:"
+                    data-es="Normalizando R por filas se obtiene la matriz estocástica Q, a partir de la cual el PSL se deriva como la probabilidad de absorción en el estado Disparo:">
+                    </p>
+                    <div class="formula">
+                        $$PSL(A) = [1, 0, \ldots, 0] \cdot (I - T)^{-1} \cdot X \cdot [0, 1]^T$$
+                    </div>
+                    <p data-en="where T contains transient-to-transient probabilities and X transient-to-absorbing probabilities."
+                    data-es="donde T contiene las probabilidades entre estados transitorios y X las probabilidades de estados transitorios a estados absorbentes.">
+                    </p>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    DISTRIBUTION ANALYSIS
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="3. Every Player Has a Distribution, Not Just a Number"
+                        data-es="3. Cada Jugador Tiene una Distribución, No Solo un Número">
+                        3. Every Player Has a Distribution, Not Just a Number
+                    </h3>
+                    <p data-en="A key insight of this work: a player's r(J, S) varies significantly across matches. Rather than treating it as a fixed value, we fit each player's shot-rate history to a <strong>Beta distribution</strong> (parameterized by α and β), capturing both their average tendency and their variability."
+                    data-es="Una insight clave de este trabajo: el r(J, S) de un jugador varía significativamente entre partidos. En lugar de tratarlo como un valor fijo, ajustamos el historial de tasas de disparo de cada jugador a una <strong>distribución Beta</strong> (parametrizada por α y β), capturando tanto su tendencia promedio como su variabilidad.">
+                    </p>
+
+                    <figure class="paper-figure">
+                        <img src="img/fig6.png" 
+                            alt="Players shot distribution" 
+                            class="paper-img">
+                        <figcaption data-en="Figure 2: Sergio Aguero and Robin van Persie shot probability distribution"
+                                    data-es="Figura 2: Sergio Aguero and Robin van Persie shot probability distribution">
+                        </figcaption>
+                    </figure>
+
+                    <p data-en="With this probabilistic view, we can find statistically <em>similar</em> players using <strong>Kullback-Leibler divergence</strong> — a similarity metric between distributions. Two players are similar not just if they score the same, but if their underlying shot-rate behavior follows the same pattern."
+                    data-es="Con esta visión probabilística, podemos encontrar jugadores estadísticamente <em>similares</em> usando la <strong>divergencia de Kullback-Leibler</strong> — una métrica de similitud entre distribuciones. Dos jugadores son similares no solo si puntúan igual, sino si su comportamiento de tasa de disparo sigue el mismo patrón.">
+                    </p>
+
+                    <p data-en="We also applied K-Means clustering to group players by their Beta parameters, revealing 16 distinct behavioral archetypes — from rare shot-takers to high-frequency shooters."
+                    data-es="También aplicamos K-Means clustering para agrupar jugadores por sus parámetros Beta, revelando 16 arquetipos de comportamiento distintos — desde jugadores que raramente disparan hasta atacantes de alta frecuencia.">
+                    </p>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    MONTE CARLO PSL
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="4. Estimating Team PSL via Monte Carlo Simulation"
+                        data-es="4. Estimando el PSL del Equipo vía Simulación de Monte Carlo">
+                        4. Estimating Team PSL via Monte Carlo Simulation
+                    </h3>
+                    <p data-en="Since every player's transition rates are now random variables (drawn from their fitted distributions), the team's PSL is itself a random variable. We estimate its full distribution using <strong>Monte Carlo simulation</strong>:"
+                    data-es="Como las tasas de transición de cada jugador son ahora variables aleatorias (extraídas de sus distribuciones ajustadas), el PSL del equipo es en sí mismo una variable aleatoria. Estimamos su distribución completa usando <strong>simulación de Monte Carlo</strong>:">
+                    </p>
+                    <ol>
+                        <li data-en="Sample a rate matrix R from each player's prior distributions"
+                            data-es="Muestrear una matriz de tasas R a partir de las distribuciones a priori de cada jugador"></li>
+                        <li data-en="Normalize to obtain the transition probability matrix Q"
+                            data-es="Normalizar para obtener la matriz de probabilidades de transición Q"></li>
+                        <li data-en="Compute PSL(Q) analytically"
+                            data-es="Calcular PSL(Q) de forma analítica"></li>
+                        <li data-en="Repeat N = 1,000 times to obtain the empirical PSL distribution"
+                            data-es="Repetir N = 1,000 veces para obtener la distribución empírica del PSL"></li>
+                    </ol>
+
+                    <figure class="paper-figure">
+                        <img src="img/fig13.png" 
+                            alt="PSL distribution" 
+                            class="paper-img">
+                        <figcaption data-en="Figure 3: PSL distribution under simulation"
+                                    data-es="Figura 3: PSL distribution under simulation">
+                        </figcaption>
+                    </figure>
+
+                    <p data-en="To compare two players competing for the same roster spot, we simulate both lineup variants and compare the resulting PSL distributions — giving us a probabilistic recommendation."
+                    data-es="Para comparar dos jugadores que compiten por el mismo puesto en el equipo, simulamos ambas variantes de formación y comparamos las distribuciones de PSL resultantes — lo que nos da una recomendación probabilística.">
+                    </p>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    PSL COMPARISON METHODS
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="5. Three Levels of Rigor for Comparing Lineups"
+                        data-es="5. Tres Niveles de Rigor para Comparar Formaciones">
+                        5. Three Levels of Rigor for Comparing Lineups
+                    </h3>
+                    <p data-en="Given two PSL distributions (e.g., <em>Team with Agüero</em> vs. <em>Team with Giroud</em>), we propose three comparison methods in increasing order of rigor:"
+                    data-es="Dadas dos distribuciones de PSL (p.ej., <em>Equipo con Agüero</em> vs. <em>Equipo con Giroud</em>), proponemos tres métodos de comparación en orden creciente de rigor:">
+                    </p>
+
+                    <div class="text-block">
+                        <h3 data-en="① Moment Comparison"
+                            data-es="① Comparación de Momentos">① Moment Comparison</h3>
+                        <p data-en="Compare mean, variance, skewness, and kurtosis. Fast and intuitive — but can miss when distributions overlap in complex ways."
+                        data-es="Comparar media, varianza, sesgo y curtosis. Rápido e intuitivo — pero puede fallar cuando las distribuciones se solapan de formas complejas.">
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3 data-en="② Probabilistic Dominance"
+                            data-es="② Dominancia Probabilística">② Probabilistic Dominance</h3>
+                        <p data-en="Compute P(PSL_A > PSL_B) by sampling from both distributions. If this probability exceeds 0.5, formation A has probabilistic dominance. In our Agüero vs. Giroud example:"
+                        data-es="Calcular P(PSL_A > PSL_B) muestreando de ambas distribuciones. Si esta probabilidad supera 0.5, la formación A tiene dominancia probabilística. En nuestro ejemplo Agüero vs. Giroud:">
+                        </p>
+                        <div class="formula">
+                            $$P(PSL_{\text{Giroud}} > PSL_{\text{Agüero}}) \approx 0.542$$
+                        </div>
+                    </div>
+
+                    <div class="text-block">
+                        <h3 data-en="③ Stochastic Dominance"
+                            data-es="③ Dominancia Estocástica">③ Stochastic Dominance</h3>
+                        <p data-en="The most rigorous test: compare Cumulative Distribution Functions (CDFs). If one CDF lies entirely above the other beyond a threshold, that formation <em>stochastically dominates</em> the other — it produces higher PSL across the entire probability space."
+                        data-es="La prueba más rigurosa: comparar las Funciones de Distribución Acumulada (CDFs). Si una CDF se ubica completamente por encima de la otra más allá de un umbral, esa formación <em>domina estocásticamente</em> a la otra — produce mayor PSL en todo el espacio de probabilidad.">
+                        </p>
+
+                    <figure class="paper-figure">
+                        <img src="img/fig15.png" 
+                            alt="Players shot distribution" 
+                            class="paper-img">
+                        <figcaption data-en="Figure 4: CDFs of Agüero vs Giroud"
+                                    data-es="Figura 4: CDFs of Agüero vs Giroud">
+                        </figcaption>
+                    </figure>
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    PLAYER2VEC
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="6. Player2Vec: Embedding Players into Vector Space"
+                        data-es="6. Player2Vec: Embeddings de Jugadores en Espacio Vectorial">
+                        6. Player2Vec: Embedding Players into Vector Space
+                    </h3>
+                    <p data-en="To enable predictive modeling across players and teams, we developed <strong>Player2Vec</strong> — a graph embedding model inspired by Word2Vec's logic applied to player networks. Each player in the EPL 2012/13 season is represented as a 64-dimensional vector that encodes their structural role in passing networks."
+                    data-es="Para habilitar el modelado predictivo entre jugadores y equipos, desarrollamos <strong>Player2Vec</strong> — un modelo de graph embedding inspirado en la lógica de Word2Vec aplicado a redes de jugadores. Cada jugador de la temporada EPL 2012/13 se representa como un vector de 64 dimensiones que codifica su rol estructural en las redes de pases.">
+                    </p>
+                    <p data-en="The full graph GFull is built by composing all per-lineup, per-match subgraphs (37,521 nodes, 47,338 edges). Node2Vec random walks traverse this graph to learn contextual player representations — where <em>context</em> means 'which players and game states appear near this player across all matches'."
+                    data-es="El grafo completo GFull se construye componiendo todos los subgrafos por lineup y por partido (37.521 nodos, 47.338 aristas). Los random walks de Node2Vec recorren este grafo para aprender representaciones contextuales de jugadores — donde <em>contexto</em> significa 'qué jugadores y estados de juego aparecen cerca de este jugador en todos los partidos'.">
+                    </p>
+
+                    <figure class="paper-figure">
+                        <img src="img/fig21.png" 
+                            alt="PCA 2D for resulting embeddings" 
+                            class="paper-img">
+                        <figcaption data-en="PCA 2D for resulting embeddings"
+                                    data-es="PCA 2D for resulting embeddings">
+                        </figcaption>
+                    </figure>
+
+                    <p data-en="A key validation: in the 2D PCA projection of Player2Vec embeddings, <strong>players from the same team cluster together</strong>, confirming that the embeddings capture real team-level interaction patterns — not just individual stats."
+                    data-es="Una validación clave: en la proyección 2D con PCA de los embeddings de Player2Vec, <strong>los jugadores del mismo equipo se agrupan</strong>, confirmando que los embeddings capturan patrones reales de interacción a nivel de equipo — no solo estadísticas individuales.">
+                    </p>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    PREDICTIVE MODEL
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="7. Predicting Future Transition Distributions"
+                        data-es="7. Prediciendo Distribuciones de Transición Futuras">
+                        7. Predicting Future Transition Distributions
+                    </h3>
+                    <p data-en="The final modeling piece: a neural network that takes a Player2Vec embedding as input and predicts the <strong>mean and variance</strong> of each of the player's transition rate distributions. This allows the model to forecast how a player will behave in a <em>new</em> team context — the core of transfer recommendation."
+                    data-es="La pieza final del modelado: una red neuronal que toma un embedding de Player2Vec como input y predice la <strong>media y varianza</strong> de cada una de las distribuciones de tasas de transición del jugador. Esto le permite al modelo predecir cómo se comportará un jugador en un <em>nuevo</em> contexto de equipo — el núcleo de la recomendación de transferencias.">
+                    </p>
+                    <p data-en="We trained on the first half of the 2012/13 EPL season (embeddings) to predict transition distributions in the second half (labels). Loss function: Jensen-Shannon Divergence (JSD) between predicted and actual distributions."
+                    data-es="Entrenamos sobre la primera mitad de la temporada EPL 2012/13 (embeddings) para predecir distribuciones de transición en la segunda mitad (etiquetas). Función de pérdida: Divergencia de Jensen-Shannon (JSD) entre distribuciones predichas y reales.">
+                    </p>
+                    <p data-en="After Bayesian hyperparameter search (1,000 iterations with Hyperopt), the tuned model achieved a test loss of <strong>0.01449 JSD</strong>, compared to <strong>0.0353</strong> when simply using the first-half distributions as priors:"
+                    data-es="Tras búsqueda bayesiana de hiperparámetros (1.000 iteraciones con Hyperopt), el modelo optimizado alcanzó una pérdida de test de <strong>0.01449 JSD</strong>, frente a <strong>0.0353</strong> al usar simplemente las distribuciones de la primera mitad como priors:">
+                    </p>
+                    <div class="formula">
+                        $$\text{Improvement} = \frac{0.0353 - 0.01449}{0.0353} \approx \mathbf{58.99\%}$$
+                    </div>
+                </div>
+
+                <!-- ════════════════════════════════════════════════════
+                    VALIDATION: TRANSFER CASES
+                ════════════════════════════════════════════════════ -->
+                <div class="text-block">
+                    <h3 data-en="8. Validation: Predicting Real Transfer Outcomes"
+                        data-es="8. Validación: Prediciendo Resultados de Transferencias Reales">
+                        8. Validation: Predicting Real Transfer Outcomes
+                    </h3>
+                    <p data-en="We tested the model against six major intra-Premier-League transfers from the 2013/14 and 2014/15 windows, asking: <em>would replacing player X with player Y improve the team's PSL distribution?</em>"
+                    data-es="Pusimos a prueba el modelo contra seis grandes transferencias dentro de la Premier League de las ventanas 2013/14 y 2014/15, preguntando: <em>¿reemplazar al jugador X por el jugador Y mejoraría la distribución de PSL del equipo?</em>">
+                    </p>
+
+                    <div class="text-block">
+                        <h3 data-en="Case Study: James Milner → Liverpool ✓"
+                            data-es="Caso de Estudio: James Milner → Liverpool ✓">
+                            Case Study: James Milner → Liverpool ✓
+                        </h3>
+                        <p data-en="Our model predicted Milner's inclusion over Gerrard or Downing would raise the team's PSL distribution, with probabilistic dominance of P(Milner > Gerrard) = 0.56. Reality: Milner spent 8 seasons at Liverpool, winning 3 Premier Leagues, 1 Champions League, and making 332 appearances."
+                        data-es="Nuestro modelo predijo que la inclusión de Milner sobre Gerrard o Downing elevaría la distribución PSL del equipo, con dominancia probabilística de P(Milner > Gerrard) = 0.56. Realidad: Milner pasó 8 temporadas en el Liverpool, ganando 3 Premier Leagues, 1 Champions League, y acumulando 332 apariciones.">
+                        </p>
+                    </div>
+
+                    <div class="text-block">
+                        <h3 data-en="Case Study: Danny Welbeck → Arsenal ✗"
+                            data-es="Caso de Estudio: Danny Welbeck → Arsenal ✗">
+                            Case Study: Danny Welbeck → Arsenal ✗
+                        </h3>
+                        <p data-en="The model flagged Welbeck's transfer as not recommended — his PSL distribution was stochastically dominated by both Walcott and Giroud. Reality: While Welbeck contributed positively at times, his impact was severely limited by injuries throughout his tenure."
+                        data-es="El modelo marcó la transferencia de Welbeck como no recomendable — su distribución de PSL fue dominada estocásticamente tanto por Walcott como por Giroud. Realidad: Si bien Welbeck contribuyó positivamente en algunos momentos, su impacto fue severamente limitado por lesiones durante su estadía.">
+                        </p>
+
+                        <!-- 💡 IMAGEN SUGERIDA: Figure 26 o 27 del paper — comparación de CDFs y PDFs de Welbeck vs Walcott/Giroud. Las dos curvas claramente separadas hacen muy visual el punto de "no recomendable". -->
+                    </div>
+
+                    <p data-en="Summary of all six evaluated transfers:"
+                    data-es="Resumen de las seis transferencias evaluadas:">
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-en="Player" data-es="Jugador">Player</th>
+                                <th data-en="Position" data-es="Posición">Position</th>
+                                <th data-en="From → To" data-es="De → A">From → To</th>
+                                <th data-en="Recommendation" data-es="Recomendación">Recommendation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>James Milner</td>
+                                <td data-en="Midfielder" data-es="Mediocampista">Midfielder</td>
+                                <td>Man City → Liverpool</td>
+                                <td style="color: #4caf50;" data-en="✓ Recommended" data-es="✓ Recomendable">✓ Recommended</td>
+                            </tr>
+                            <tr>
+                                <td>Andros Townsend</td>
+                                <td data-en="Midfielder" data-es="Mediocampista">Midfielder</td>
+                                <td>Tottenham → Newcastle</td>
+                                <td style="color: #4caf50;" data-en="✓ Recommended" data-es="✓ Recomendable">✓ Recommended</td>
+                            </tr>
+                            <tr>
+                                <td>Juan Mata</td>
+                                <td data-en="Midfielder" data-es="Mediocampista">Midfielder</td>
+                                <td>Chelsea → Man United</td>
+                                <td style="color: #4caf50;" data-en="✓ Recommended" data-es="✓ Recomendable">✓ Recommended</td>
+                            </tr>
+                            <tr>
+                                <td>Romelu Lukaku</td>
+                                <td data-en="Forward" data-es="Delantero">Forward</td>
+                                <td>Chelsea → Everton</td>
+                                <td style="color: #ff9800;" data-en="— Undecided" data-es="— Indeciso">— Undecided</td>
+                            </tr>
+                            <tr>
+                                <td>Ryan Bertrand</td>
+                                <td data-en="Defender" data-es="Defensor">Defender</td>
+                                <td>Chelsea → Southampton</td>
+                                <td style="color: #f44336;" data-en="✗ Not Recommended" data-es="✗ No Recomendable">✗ Not Recommended</td>
+                            </tr>
+                            <tr>
+                                <td>Danny Welbeck</td>
+                                <td data-en="Forward" data-es="Delantero">Forward</td>
+                                <td>Man United → Arsenal</td>
+                                <td style="color: #f44336;" data-en="✗ Not Recommended" data-es="✗ No Recomendable">✗ Not Recommended</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Future developement"
+                        data-es="Limitaciones y Direcciones Futuras">
+                        Future developement
+                    </h3>
+                    <p data-en="Player2Vec also has natural extensions to transformers, GNN, Temporal GNN, etc. I have been working with these advanced models to obtain more robust embeddings that might be useful for different tasks, not only predicting transition ratios."
+                    data-es="Player2Vec también tiene extensiones naturales: embeber jugadores por club (no solo globalmente), incorporar dinámicas temporales entre temporadas, e integrar directamente los coeficientes de performance local/visitante en la estructura del grafo.">
+                    </p>
+
+                    <div class="figure-row">
+                        <figure class="paper-figure">
+                            <img src="img/embeddings.png" alt="Embeddings obtained by a Transformer model" class="paper-img">
+                            <figcaption data-en="Embeddings obtained by a Transformer model"
+                                        data-es="Embeddings obtained by a Transformer model"></figcaption>
+                        </figure>
+                        <figure class="paper-figure">
+                            <img src="img/predictions.png" alt="Shots ratio predictions" class="paper-img">
+                            <figcaption data-en="Shots ratio predictions"
+                                        data-es="Shots ratio predictions"></figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="config.js"></script>
+
+</body>
+</html>

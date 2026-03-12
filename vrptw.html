@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player2Vec - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ]
+        });">
+    </script>
+</head>
+<body>
+
+    
+    <div class="nav-container">
+        <a href="./index.html#projects" class="btn" data-en="← Back to Projects" data-es="← Volver a Proyectos">← Back to Projects</a>
+    </div>
+    
+    <div class="site-controls">
+        <button id="lang-toggle" class="control-btn">EN / ES</button>
+        <button id="theme-toggle" class="control-btn">🌙</button>
+    </div>
+
+    <main class="container">
+        <section id="project-detail">
+            <h1 class="section-title">
+                <span data-en="VRPTW with cross-dock <br> sincronization" data-es="VRPTW con sincronización <br> de cross-dock">VRPTW with cross-dock sincronization</span><span class="dot">.</span>
+            </h1>
+            
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="overview" data-en="Overview & Impact" data-es="Resumen e Impacto">Overview & Impact</button>
+                <button class="tab-btn" data-tab="technical" data-en="Technical Deep Dive" data-es="Detalles Técnicos">Technical Deep Dive</button>
+            </div>
+
+            <div id="overview" class="tab-content active">                
+                <div class="text-block">
+                    <h3 data-en="The problem" data-es="El problema">The problem</h3>
+                    <p data-en="Mercado Libre operates distribution centers with fixed processing capacities based on work shifts. Every day, trucks go out to collect packages from sellers and must arrive at the center in time to be processed.
+                    <br><br> The challenge has two dimensions: on one hand, <strong>visiting as many sellers as possible</strong> while respecting their time windows and the capacity constraints of each truck. On the other, <strong>coordinating visit times with the center's capacity</strong>: visiting too late can saturate processing, while visiting too early means collecting fewer packages, as sellers accumulate more throughout the day.
+                    <br><br> The goal is to <strong>maximize collected packages by matching the flow of arrivals at the center with its actual processing capacity.</strong>" 
+                    data-es="Mercado Libre opera centros de distribución con capacidad de procesamiento fija según los turnos de trabajo. Cada día, camiones salen a recolectar paquetes de los vendedores y deben llegar al centro a tiempo para ser procesados.
+                    <br><br> El desafío tiene dos dimensiones: por un lado, <strong>visitar la mayor cantidad de vendedores posible </strong>respetando sus ventanas horarias y las restricciones de capacidad de cada camión. Por otro, <strong>coordinar los horarios de visita con la capacidad del centro</strong>: visitar demasiado tarde puede saturar el procesamiento, visitar demasiado temprano implica recolectar menos paquetes, ya que los vendedores acumulan más a medida que avanza el día.
+                    <br><br> El objetivo es <strong>maximizar paquetes recolectados, haciendo coincidir el flujo de llegadas al centro con su capacidad real de procesamiento.</strong>"></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Solution" data-es="Solución">Solution</h3>
+                    <p data-en="A <strong>demand curve per seller</strong> was modeled: using historical operational data, we estimated how many packages each seller generates depending on the time of day. This allows us to know the optimal time to visit them to maximize collection.
+                    <br> <br> Based on this, a <strong>metaheuristic optimization system</strong> was developed to generate collection routes by simultaneously considering three objectives: maximizing collected packages, adjusting the flow of arrivals at the center to its capacity curve, and minimizing travel distance." 
+                    data-es="Se modeló una <strong>curva de demanda por vendedor</strong>: a partir de datos históricos de la operación, se estimó cuántos paquetes genera cada vendedor según la hora del día. Esto permite saber cuándo conviene visitarlo para maximizar la recolección.
+                    <br> <br> Sobre esa base, se desarrolló un sistema de <strong>optimización por metaheurísticas </strong>que genera rutas de recolección considerando simultáneamente tres objetivos: maximizar paquetes recolectados, ajustar el flujo de llegadas al centro a su curva de capacidad, y minimizar distancia recorrida."></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Key Results" data-es="Resultados Clave">Key Results</h3>
+                    <ul class="exp-list">
+                        <li data-en="The number of collected packages increased by 1%-3%, a significant amount given the scale of Mercado Libre's operation." data-es="La cantidad de paquetes recolectados aumentó un 1%-3%, una cantidad considerable dado la escala de la operación de Mercado Libre."></li>
+                        <li data-en="Processing saturation peaks at the center were reduced by up to 50%." data-es="Los picos de saturación de procesamiento en el centro se redujeron hasta un 50%."></li>
+                        <li data-en="Valuable operational insights were obtained regarding the coordination of visit windows and processing capacity at the center." data-es="Se obtuvieron insighs muy valiosos para la operación, respecto a la coordniación de ventanas de visita y la capacidad de procesamiento en el centro."></li>
+                    </ul>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="Technologies" data-es="Tecnologías">Technologies</h3>
+                    <div class="skill-tags">
+                        <span>Python</span><span>C++</span><span>OR-Tools</span><span>Metaheuristics</span><span>Mixed Integer Programming</span><span>ALNS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="technical" class="tab-content">
+                <div class="text-block">
+                    <h3 data-en="1. Demand Curve Estimation" data-es="1. Estimación de la Curva de Demanda">1. Demand Curve Estimation</h3>
+                    <p data-en="Each seller is assigned a theoretical demand function estimating the number of packages available for pickup as a function of the time of day. These curves are fitted from historical operational data, capturing intra-day accumulation patterns. The key insight is that visiting a seller later within their time window generally yields more packages. The optimization must therefore balance late visits — to maximize collection — against the processing capacity of the cross-dock, which operates under fixed workforce shifts." 
+                    data-es="A cada vendedor se le asigna una función de demanda teórica que estima la cantidad de paquetes disponibles para recolectar en función de la hora del día. Estas curvas se ajustan a partir de datos históricos de la operación, capturando los patrones de acumulación intradía. La intuición central es que visitar a un vendedor más tarde dentro de su ventana horaria generalmente implica recolectar más paquetes. La optimización debe entonces balancear visitas tardías —para maximizar la recolección— con la capacidad de procesamiento del cross-dock, que opera bajo turnos de trabajo fijos."></p>
+                
+                    <figure class="paper-figure">
+                        <img src="img/demand.png" 
+                            alt="seller demand" 
+                            class="paper-img"
+                            style="width: 550px;">
+                        <figcaption data-en="Figure 1: Seller demand example"
+                                    data-es="Figura 1: Ejemplo de curva demanda">
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="2. Problem Formulation" data-es="2. Formulación del Problema">2. Problem Formulation</h3>
+                    <p data-en="The problem is formulated as a Vehicle Routing Problem with Time Windows (VRPTW) extended with two additional objectives. Each route defines an implicit arrival time at the cross-dock depot, which in turn determines: (i) how many packages are collected from each visited seller, given their demand curve, and (ii) how well the resulting arrival flow matches the cross-dock's processing capacity curve. The composite objective function balances these three components:"
+                    data-es="El problema se formula como un Problema de Ruteo de Vehículos con Ventanas de Tiempo (VRPTW) extendido con dos objetivos adicionales. Cada ruta define implícitamente un tiempo de llegada al depósito (cross-dock), que a su vez determina: (i) cuántos paquetes se recolectan de cada vendedor visitado, dada su curva de demanda, y (ii) qué tan bien el flujo de llegadas resultante se ajusta a la curva de capacidad de procesamiento del cross-dock. La función objetivo compuesta balancea estos tres componentes:"></p>
+                    <div class="formula">
+                        $$\min \; \alpha \cdot D - \beta \cdot P + \gamma \cdot \sum_{t} \left( A(t) - C(t) \right)^2$$
+                    </div>
+                    <p data-en="where D is total distance traveled, P is total packages collected, A(t) is the arrival flow at time t, and C(t) is the processing capacity at time t. The parameters α, β, γ control the trade-off between objectives."
+                    data-es="donde D es la distancia total recorrida, P es el total de paquetes recolectados, A(t) es el flujo de llegadas al tiempo t, y C(t) es la capacidad de procesamiento en el tiempo t. Los parámetros α, β, γ controlan el balance entre objetivos."></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="3. Iterated Local Search (ILS)" data-es="3. Búsqueda Local Iterada (ILS)">3. Iterated Local Search (ILS)</h3>
+                    <p data-en="The main metaheuristic is an Iterated Local Search. Starting from a greedy initial solution, the algorithm alternates between a perturbation phase (kick) and an intensification phase (VND). The kick applies a partial destruction of the current solution by removing a subset of sellers from their assigned routes, then the intensification phase attempts to reinsert them optimally. The acceptance criterion is greedy: a new solution is accepted only if it strictly improves the best known objective value. An adaptive early stopping mechanism halts the search based on iteration count, elapsed time, and relative improvement threshold."
+                    data-es="La metaheurística principal es una Búsqueda Local Iterada. Partiendo de una solución inicial golosa, el algoritmo alterna entre una fase de perturbación (kick) y una de intensificación (VND). El kick aplica una destrucción parcial de la solución actual removiendo un subconjunto de vendedores de sus rutas asignadas, y luego la fase de intensificación intenta reinsertarlos de forma óptima. El criterio de aceptación es goloso: una nueva solución se acepta solo si mejora estrictamente el mejor valor objetivo conocido. Un mecanismo adaptivo de parada temprana detiene la búsqueda en función del número de iteraciones, tiempo transcurrido y umbral de mejora relativa."></p>
+                    <figure class="paper-figure">
+                        <img src="img/routes.png" alt="" class="paper-img" style="width: 450px;">
+                        <figcaption data-en="Routes example"
+                                    data-es="Ejemplo de rutas radiales"></figcaption>
+                    </figure>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="4. Adaptive Kick with Operator Selection" data-es="4. Kick Adaptivo con Selección de Operadores">4. Kick Adaptivo con Selección de Operadores</h3>
+                    <p data-en="Multiple destruction operators compete during the perturbation phase. The system tracks each operator's historical performance — how often it was applied and how often the resulting solution was accepted — and dynamically updates selection probabilities using a roulette-wheel mechanism. This allows the search to self-tune toward the most productive perturbation strategies as the run progresses."
+                    data-es="Múltiples operadores de destrucción compiten durante la fase de perturbación. El sistema registra el desempeño histórico de cada operador —cuántas veces fue aplicado y cuántas veces la solución resultante fue aceptada— y actualiza dinámicamente las probabilidades de selección mediante un mecanismo de ruleta. Esto permite que la búsqueda se auto-ajuste hacia las estrategias de perturbación más productivas a medida que avanza la corrida."></p>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="5. Variable Neighborhood Descent (VND) with Extended Move Evaluation" data-es="5. Descenso por Vecindades Variables (VND) con Evaluación Extendida de Movimientos">5. Variable Neighborhood Descent (VND) with Extended Move Evaluation</h3>
+                    <p data-en="The intensification phase uses VND over three neighborhood structures: Insert (relocating a single seller to a different position or route), Cross (exchanging segments between two routes), and 2-opt (reversing a subsequence within a route). If a neighborhood yields improvement, the search restarts from the first neighborhood; otherwise it advances to the next. The process terminates when no operator can improve the current solution."
+                    data-es="La fase de intensificación usa VND sobre tres estructuras de vecindad: Insert (reubicar un vendedor en otra posición o ruta), Cross (intercambiar segmentos entre dos rutas) y 2-opt (invertir una subsecuencia dentro de una ruta). Si una vecindad genera mejora, la búsqueda reinicia desde la primera; de lo contrario avanza a la siguiente. El proceso termina cuando ningún operador puede mejorar la solución actual."></p>
+                    <p data-en="Critically, each move evaluation in this problem is more complex than in a standard VRPTW. Relocating a seller or swapping route segments not only affects travel times and feasibility, but also redefines the arrival time at the depot for all subsequent stops. This cascading effect changes the number of packages collected from each seller — via their demand curve — and alters the shape of the arrival flow at the cross-dock. Every candidate move must therefore be evaluated against the full composite objective, making neighborhood search significantly more expensive than in classical formulations."
+                    data-es="De forma crítica, la evaluación de cada movimiento en este problema es más compleja que en un VRPTW estándar. Reubicar un vendedor o intercambiar segmentos de ruta no solo afecta los tiempos de viaje y la factibilidad, sino que también redefine el tiempo de llegada al depósito para todas las paradas subsiguientes. Este efecto en cascada modifica la cantidad de paquetes recolectados de cada vendedor —a través de su curva de demanda— y altera la forma del flujo de llegadas al cross-dock. Cada movimiento candidato debe por tanto evaluarse contra la función objetivo compuesta completa, haciendo la búsqueda local significativamente más costosa que en formulaciones clásicas."></p>
+                    <figure class="paper-figure">
+                        <img src="img/xdcurve.png" alt="" class="paper-img">
+                        <figcaption data-en="Cross-dock processing curve"
+                                    data-es="Curva de procesamiento en el centro"></figcaption>
+                    </figure>
+                </div>
+
+                <div class="text-block">
+                    <h3 data-en="6. Granular Neighborhood" data-es="6. Vecindad Granular">6. Vecindad Granular</h3>
+                    <p data-en="To manage the computational cost of extended move evaluation, candidate moves are restricted to a granular neighborhood: for each seller, only its k nearest neighbors — ranked by a composite score weighting distance and temporal compatibility — are considered as relocation or swap targets. This reduces the search space from O(n²) to O(nk) per iteration without meaningful loss in solution quality, enabling the VND to run within practical time limits even for large instances."
+                    data-es="Para gestionar el costo computacional de la evaluación extendida de movimientos, los movimientos candidatos se restringen a una vecindad granular: para cada vendedor, solo sus k vecinos más prometedores —ordenados por un score compuesto que pondera distancia y compatibilidad temporal— son considerados como destinos de reubicación o intercambio. Esto reduce el espacio de búsqueda de O(n²) a O(nk) por iteración sin pérdida significativa en la calidad de la solución, permitiendo que el VND se ejecute dentro de límites de tiempo prácticos incluso para instancias grandes."></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="config.js"></script>
+</body>
+</html>

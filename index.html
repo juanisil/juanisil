@@ -1,71 +1,199 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional</title>
+    <title>Juan Ignacio Silvestri</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="container nav-bar">
-            <h1>Mi Portafolio</h1>
-            <nav>
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-        </div>
-    </header>
+    
+    <div class="nav-container">
+        <nav class="pill-nav">
+            <a href="#about" class="active" data-en="About me" data-es="Sobre mí">About me</a>
+            <a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a>
+            <a href="#experience" data-en="Experience" data-es="Experiencia">Experience</a>
+        </nav>
+    </div>
+    <div class="site-controls">
+        <button id="lang-toggle" class="control-btn">EN / ES</button>
+        <button id="theme-toggle" class="control-btn">🌙</button>
+    </div>
 
-    <section id="sobre-mi" class="container">
-        <div class="profile-text">
-            <h2>Hola, soy [Tu Nombre]</h2>
-            <p>
-                Soy un desarrollador de software con experiencia en C++ y algoritmos complejos, con formación en la Universidad Torcuato Di Tella. Me especializo en encontrar soluciones eficientes a problemas del mundo real mediante modelos estadísticos, machine learning y optimización.
-            </p>
-        </div>
-    </section>
+    <main class="container">
+        <section id="about">
+            <div class="hero-container">
+                <h1 class="hero-headline">
+                    <span data-en="Designing Quantitative Models for" data-es="Diseñando Modelos <br> Cuantitativos para">Designing Quantitative Models for</span><br>
+                    <span class="dot" data-en="Complex Decision-Making." data-es="Toma de Decisiones.">Complex Decision-Making.</span>
+                </h1>
+                
+                <div class="hero-content-wrapper">
+                    <div class="hero-main-text">
+                        <p class="hero-description" 
+                        data-en="I'm Juan Ignacio Silvestri, a <strong><a href='https://www.utdt.edu/ver_contenido.php?id_contenido=19866&id_item_menu=31534' target='_blank' rel='noopener noreferrer'>Digital Technology</a> graduate from <a href='https://www.utdt.edu/' target='_blank' rel='noopener noreferrer'>Torcuato Di Tella University</a></strong>. I specialize in the intersection of <strong>Operations Research</strong> and <strong>Machine Learning</strong>. I build tools that translate complex systems into actionable insights, currently focusing on large-scale logistics for <strong>Mercado Libre</strong>."
+                        data-es="Soy Juan Ignacio Silvestri, <strong>Licenciado en <a href='https://www.utdt.edu/ver_contenido.php?id_contenido=19866&id_item_menu=31534' target='_blank' rel='noopener noreferrer'>Tecnología Digital</a> por la <a href='https://www.utdt.edu/' target='_blank' rel='noopener noreferrer'>Universidad Torcuato Di Tella</a></strong>. Me especializo en la intersección de <strong>Investigación Operativa</strong> y <strong>Machine Learning</strong>. Construyo herramientas que traducen sistemas complejos en información accionable, actualmente enfocado en logística a gran escala para <strong>Mercado Libre</strong>.">
+                        </p>
+                        
+                        <div class="skill-tags">
+                            <span data-en="Algorithmic Modeling" data-es="Modelado Algorítmico">Algorithmic Modeling</span>
+                            <span>C++ / Python</span>
+                            <span data-en="Combinatorial Optimization" data-es="Optimización combinatoria">Combinatorial Optimization</span>
+                            <span data-en="Data Science" data-es="Ciencia de Datos">Data Science</span>
+                        </div>
+                    </div>
 
-    <section id="proyectos" class="container">
-        <h2>Proyectos Destacados</h2>
-        <div class="grid-proyectos">
-
-            <div class="card-proyecto">
-                <h3>Player2Vec</h3>
-                <p>Framework para el análisis de performance de jugadores de fútbol utilizando modelos estadísticos y de machine learning.</p>
-                <div class="tags">
-                    <span>Machine Learning</span>
-                    <span>Estadística</span>
+                    <a href="https://www.linkedin.com/in/juan-ignacio-silvestri/" class="profile-card" style="background-image: url('./img/me.png');" target="_blank" rel="noopener noreferrer">
+                        <h2>LinkedIn</h2>
+                    </a>
                 </div>
-                <a href="player2vec.html" class="btn-ver-mas">Ver detalles &rarr;</a>
             </div>
+        </section>
 
-            <div class="card-proyecto">
-                <h3>VRPTW con Arrival Smoothing</h3>
-                <p>Variante compleja del problema de ruteo vehicular con ventanas de tiempo (VRPTW) para aplicación en el mundo real, desarrollado en colaboración con Mercado Libre.</p>
-                <div class="tags">
-                    <span>Optimización</span>
-                    <span>Algoritmos</span>
-                    <span>Logística</span>
+        <section id="projects">
+            <h1 class="section-title"><span data-en="projects" data-es="proyectos">projects</span><span class="dot">.</span></h1>
+            
+            <div class="card-grid">
+                <a href="player2vec.html" class="card" style="background-image: url('./img/xG.png');">
+                    <div class="card-content">
+                        <h2>Player2Vec</h2>
+                        <p data-en="Machine Learning framework for spatio-temporal football analysis, enabling data-driven professional scouting." 
+                        data-es="Framework de Machine Learning para análisis de fútbol espacio-temporal, permitiendo scouting profesional basado en datos."></p>                    
+                    </div>
+                </a>
+
+                <a href="vrptw.html" class="card" style="background-image: url('./img/VRPTW.png');">
+                    <div class="card-content">
+                        <h2>VRPTW + Arrival Smoothing</h2>
+                        <p data-en="High-performance C++ solver developed for Mercado Libre to optimize large-scale logistics and smooth cross-dock bottlenecks." 
+                        data-es="Solver de C++ de alto rendimiento desarrollado para Mercado Libre para optimizar logística a gran escala y suavizar cuellos de botella en el cross-dock."></p>                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h1 class="section-title"><span data-en="experience" data-es="experiencia">experience</span><span class="dot">.</span></h1>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date" data-en="Mar 2024 — Present" data-es="Mar 2024 — Presente">Mar 2024 — Present</p>
+                    <div class="timeline-content">
+                        <h3 data-en="Research Assistant (Operations Research) @ <a href='https://www.utdt.edu/' target='_blank'>UTDT</a>" 
+                            data-es="Asistente de Investigación (Inv. Operativa) @ <a href='https://www.utdt.edu/' target='_blank'>UTDT</a>">
+                            Research Assistant (Operations Research) @ UTDT
+                        </h3>                       
+                        <p data-en="Developing high-performance computational solutions for complex variants of the <strong>Vehicle Routing Problem with Time Windows (VRPTW)</strong> in collaboration with <strong>Mercado Libre</strong>. Implemented state of the art <strong>metaheuristics in C++</strong> to optimize large-scale logistics operations." 
+                        data-es="Desarrollo de soluciones computacionales de alto rendimiento para variantes complejas del <strong>Problema de Ruteo Vehicular (VRPTW)</strong> en colaboración con <strong>Mercado Libre</strong>. Implementación de <strong> metaheuristicas en C++</strong> para optimizar operaciones logísticas de gran escala.">
+                        </p>
+                    </div>
                 </div>
-                <a href="vrptw.html" class="btn-ver-mas">Ver detalles &rarr;</a>
+
+                <div class="timeline-item">
+                    <p class="timeline-date" data-en="Feb 2025 — Present" data-es="Feb 2025 — Presente">Feb 2025 — Present</p>
+                    <div class="timeline-content">
+                        <h3 data-en="Research Assistant (Machine Learning) @ <a href='https://www.utdt.edu/' target='_blank'>UTDT</a>" 
+                            data-es="Asistente de Investigación (Machine Learning) @ <a href='https://www.utdt.edu/' target='_blank'>UTDT</a>">
+                            Research Assistant (Machine Learning) @ UTDT
+                        </h3>                       
+                        <p data-en="Developed the <strong>Player2Vec</strong> project, a framework for football player performance analysis. Based on <strong>Machine Learning models</strong> to process complex spatial-temporal data, enabling advanced statistical scouting and player evaluation for professional environments." 
+                        data-es="Desarrollo del proyecto <strong>Player2Vec</strong>, un framework para el análisis de performance de jugadores de fútbol. Basado en <strong>modelos de Machine Learning</strong> para procesar datos espacio-temporales complejos, permitiendo scouting estadístico avanzado y evaluación de jugadores.">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 2024 — May 2025</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Teaching Assistant @ <a href='https://www.utdt.edu/' target='_blank' rel='noopener noreferrer'>UTDT</a>" 
+                            data-es="Asistente de Cátedra @ <a href='https://www.utdt.edu/' target='_blank' rel='noopener noreferrer'>UTDT</a>">
+                            Teaching Assistant @ UTDT
+                        </h3>
+                        
+                        <p data-en="Facilitated learning through weekly problem-solving sessions, coding labs, and student mentorship across undergraduate and graduate programs:" 
+                        data-es="Facilitación del aprendizaje mediante clases prácticas semanales, laboratorios de programación y mentoría de alumnos en programas de grado y posgrado:">
+                        </p>
+
+                        <ul class="exp-list">
+                            <li data-en="<strong>Algorithms and Data Structures</strong> (Undergraduate): Focused on complexity analysis, sorting/searching algorithms, and efficient data organization." 
+                                data-es="<strong>Algoritmos y Estructuras de Datos</strong> (Grado): Enfoque en análisis de complejidad, algoritmos de ordenamiento/búsqueda y organización eficiente de datos.">
+                            </li>
+                            <li data-en="<strong>Computational Applications in Business</strong> (Undergraduate): Solving management problems using Python and quantitative modeling." 
+                                data-es="<strong>Aplicaciones Computacionales en Negocios</strong> (Grado): Resolución de problemas de gestión utilizando Python y modelado cuantitativo.">
+                            </li>
+                            <li data-en="<strong>Fundamentals of Algorithms</strong> (Master in Management + Analytics): Teaching core algorithmic logic and Python programming for business analytics professionals." 
+                                data-es="<strong>Fundamentos de Algoritmos</strong> (Master in Management + Analytics): Enseñanza de lógica algorítmica y programación en Python para profesionales de analítica de negocios.">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2022 — Jun 2023</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Mobile App Developer @ <a href='https://sanluislaciudad.gob.ar/' target='_blank' rel='noopener noreferrer'>Municipality of San Luis</a>" data-es="Desarrollador Mobile @ <a href='https://sanluislaciudad.gob.ar/' target='_blank' rel='noopener noreferrer'>Municipalidad de San Luis</a>">Mobile App Developer @ <a href='https://sanluislaciudad.gob.ar/' target='_blank' rel='noopener noreferrer'>Municipality of San Luis</a></h3>
+                        <p data-en="Developed new features for the <strong>SIGEM</strong> municipal management app, enhancing digital services for the local government." 
+                        data-es="Desarrollo de nuevas funcionalidades para la app <strong>SIGEM</strong>, mejorando los servicios digitales del gobierno local.">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Mar 2020 — Jun 2020</div>
+                    <div class="timeline-content">
+                        <h3 data-en="Freelance Developer" data-es="Desarrollador Freelance">Freelance Developer</h3>
+                        <p data-en="Architected and launched a computer-vision-based mobile app that reached over 30,000 downloads. Based on an automated system for nutritional tracking that simplifies calorie management through image recognition." 
+                        data-es="Diseño y lanzamiento de  una aplicación móvil basada en visión artificial que alcanzó más de 30.000 descargas. Basado en un sistema automatizado de seguimiento nutricional que simplifica la gestión de calorías mediante reconocimiento de imágenes.">
+                        </p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+    </main>
 
-    <footer id="contacto">
-        <div class="container">
-            <p>¿Querés que hablemos? Encontrame en:</p>
-            <div class="social-links">
-                <a href="https://github.com/tu-usuario" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
-                <a href="mailto:tu-email@ejemplo.com">Email</a>
-            </div>
-        </div>
-    </footer>
+    <script src="config.js"></script>
+    <script>
+        // Active Navigation Update on Scroll
+        const navLinks = document.querySelectorAll('.pill-nav a');
+        const sections = document.querySelectorAll('main > section');
 
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll Behavior
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
