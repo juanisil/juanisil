@@ -67,6 +67,53 @@ body {
     filter: brightness(0.9);
 }
 
+/* Estilos base (Desktop) - Se mantienen arriba */
+.site-controls {
+    position: fixed;
+    top: 2rem;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    /* Aseguramos que siempre esté por encima de todo */
+}
+
+/* Ajustes para Móvil (menos de 768px) */
+@media (max-width: 768px) {
+    .site-controls {
+        top: auto;
+        /* Anulamos la posición superior */
+        bottom: 2rem;
+        /* Lo posicionamos abajo */
+        right: 1.5rem;
+        flex-direction: column;
+        /* Los ponemos uno sobre otro para que ocupen menos ancho */
+        gap: 12px;
+    }
+
+    .control-btn {
+        width: 50px;
+        /* Los hacemos más circulares/cuadrados */
+        height: 50px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        /* Botones circulares tipo "Floating Action Button" */
+        background: var(--nav-bg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        /* Sombra para que resalten sobre el fondo */
+        border: 1px solid rgba(245, 166, 35, 0.3);
+        font-size: 0.8rem;
+    }
+
+    /* Opcional: Eliminar el padding extra que sugerí antes en la nav */
+    .nav-container {
+        padding: 1rem 0;
+    }
+}
+
 /* Pill Navigation */
 .nav-container {
     display: flex;
